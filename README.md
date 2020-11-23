@@ -18,7 +18,7 @@ Este projeto foi baseado no seguinte [Layout Figma](https://www.figma.com/file/3
 * [Npm](https://www.npmjs.com/)
 * [Vue](https://vuejs.org/)
 
-### Iniciando projeto
+### Iniciando Projeto
 
 ```
 npm install
