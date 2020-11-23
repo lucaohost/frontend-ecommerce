@@ -1,0 +1,103 @@
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$colors: (
+  primary: #faa500,
+  white: #fff,
+  dark-white: #e5e5e5,
+  dark-white-2: #efefef,
+  black: #000,
+  light-black: #1c1a19,
+  light-black-1: #353535,
+  beige: #deac71,
+  light-beige: #cfc9b0,
+  light-beige-1: #eae9e5,
+  red: #d84e48,
+  light-red: #d37164,
+  light-blue: #6497d3,
+  dark-blue: #3c3b79,
+);
+
+$fontSizes: (
+  xxtiny: 10px,
+  tiny: 12px,
+  normal: 14px,
+  medium: 16px,
+  big: 20px,
+  xbig: 24px,
+  xxbig: 32px,
+  xl: 40px,
+);
+
+@each $size in map-keys($fontSizes) {
+  .font-size-#{$size} {
+    font-size: map-get($fontSizes, $size);
+    p,
+    li,
+    blockquote,
+    span {
+      font-size: inherit;
+    }
+  }
+}
+
+.display-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.font-weight-normal {
+  font-weight: 400;
+}
+
+.font-weight-semibold {
+  font-weight: 600;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+@each $color in map-keys($colors) {
+  .#{$color} {
+    color: map-get($colors, $color);
+  }
+  .bg-#{$color} {
+    background: map-get($colors, $color);
+  }
+}
+
+.border-radius-xtiny {
+  border-radius: 3px;
+}
+
+.border-radius-tiny1 {
+  border-radius: 4px;
+}
+
+.border-radius-tiny {
+  border-radius: 8px;
+}
+
+.border-radius-medium {
+  border-radius: 10px;
+}
+
+.border-none {
+  border: none;
+}
