@@ -1,4 +1,4 @@
-# layout
+# Front End Ecommerce
 
 ## Project setup
 
