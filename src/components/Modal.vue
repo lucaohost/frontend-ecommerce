@@ -9,7 +9,7 @@
             </span>
           </div>
           <div class="modal-body">
-            <img class="img-modal" src="../assets/img-modal.svg" alt="Menu" />
+            <img class="img-modal" src="../assets/image-modal.png" alt="Menu" />
             <div
               class="display-flex align-items-center justify-content-center content"
             >

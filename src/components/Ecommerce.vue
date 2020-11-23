@@ -9,7 +9,9 @@
     >
       Por que comprar na Maeztra?
     </h2>
-    <ul class="display-flex justify-content-center align-items-center scroll-x">
+    <ul
+      class="display-flex justify-content-center align-items-center scroll-x cards"
+    >
       <li v-for="card in cards" :key="card.img">
         <CardWithImg :msg="card.msg" :subMsg="card.subMsg" :img="card.img" />
       </li>
@@ -180,6 +182,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.cards {
+  @media (max-width: 768px) {
+    justify-content: normal;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+}
+
 h3 {
   margin: 40px 0 0;
 }
@@ -198,11 +208,14 @@ a {
 .products {
   @media (max-width: 768px) {
     margin-bottom: 23px;
+    justify-content: normal;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 }
 
 .scroll-x {
-  @media (max-width: 1600px) {
+  @media (max-width: 768px) {
     overflow-x: scroll;
   }
 }
@@ -290,6 +303,11 @@ a {
 
 #marcasParceiras {
   margin-bottom: 80px;
+  @media (max-width: 768px) {
+    justify-content: normal;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
 }
 
 .ProductShop {
