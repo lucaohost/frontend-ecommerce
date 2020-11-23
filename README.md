@@ -1,4 +1,4 @@
-# Front-End E-commerce
+# Front-end E-commerce
 
 ## Sobre o projeto
 
