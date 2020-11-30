@@ -3,7 +3,26 @@
     <Advice />
     <HeaderSite />
     <CategoriesBar />
-    <Carousel />
+    <agile>
+      <div class="slide" v-for="index in 5" :key="index">
+        <img
+          class="img-carousel"
+          src="../assets/carousel.svg"
+          alt="Modelo Posando"
+        />
+        <img
+          class="img-carousel-mobile"
+          src="../assets/carousel-mobile.svg"
+          alt="Modelo Posando"
+        />
+      </div>
+      <template slot="nextButton"
+        ><img src="../assets/right.svg" alt="Flexa para direita"
+      /></template>
+      <template slot="prevButton"
+        ><img src="../assets/left.svg" alt="Flexa para esquerda"
+      /></template>
+    </agile>
     <h2
       class="display-flex font-size-medium justify-content-center align-items-center font-weight-bold"
     >
@@ -80,7 +99,6 @@
 import Advice from "./Advice.vue";
 import HeaderSite from "./HeaderSite.vue";
 import CategoriesBar from "./CategoriesBar.vue";
-import Carousel from "./Carousel.vue";
 import CardWithImg from "./CardWithImg.vue";
 import TitleWithText from "./TitleWithText.vue";
 import ProductShop from "./ProductShop.vue";
@@ -88,6 +106,7 @@ import InputWithButton from "./InputWithButton.vue";
 import FooterMenu from "./FooterMenu.vue";
 import Footer from "./Footer.vue";
 import Modal from "./Modal.vue";
+import { VueAgile } from "vue-agile";
 
 export default {
   name: "Ecommerce",
@@ -95,7 +114,6 @@ export default {
     Advice,
     HeaderSite,
     CategoriesBar,
-    Carousel,
     CardWithImg,
     TitleWithText,
     ProductShop,
@@ -103,6 +121,7 @@ export default {
     FooterMenu,
     Footer,
     Modal,
+    agile: VueAgile,
   },
   data() {
     return {
@@ -310,7 +329,76 @@ a {
   }
 }
 
+.img-carousel {
+  display: block;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.img-carousel-mobile {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
 .ProductShop {
   margin-right: 16px;
 }
+</style>
+
+<style lang="sass">
+// VueAgile styles
+.agile
+	&__nav-button
+		background: transparent
+		border: none
+		color: #fff
+		cursor: pointer
+		font-size: 24px
+		height: 100%
+		position: absolute
+		top: 0
+		transition-duration: .3s
+		width: 80px
+		&--prev
+			left: 0
+
+		&--next
+			right: 0
+
+	&__dots
+		bottom: 10px
+		left: 50%
+		position: absolute
+		transform: translateX(-50%)
+
+	&__dot
+		margin: 0 10px
+
+		button
+			background-color: transparent
+			border: 1px solid #FAA500
+			border-radius: 50%
+			cursor: pointer
+			display: block
+			height: 16px
+			font-size: 0
+			line-height: 0
+			margin: 0
+			padding: 0
+			transition-duration: .3s
+			width: 16px
+
+		&--current,
+		&:hover
+			button
+				background-color: #FAA500
+
+// Slides styles
+.slide
+	display: block
+	object-fit: cover
+	width: 100%
 </style>
