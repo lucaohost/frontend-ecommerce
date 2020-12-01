@@ -4,23 +4,42 @@
   >
     <div class="display-flex align-items-center">
       <img class="menu" src="../assets/menu-icon.svg" alt="Menu" />
-      <img class="logo" src="../assets/logo.svg" alt="Logo Maeztra" />
+      <img
+        v-if="!iconSearchClicked"
+        class="logo"
+        src="../assets/logo.svg"
+        alt="Logo Maeztra"
+      />
     </div>
-    <InputWithButton
-      msg="O Que Você Busca?"
-      textButton="Buscar"
-      :search="true"
-    />
+    <transition name="fade">
+      <InputWithButton
+        v-if="!iconSearchClicked"
+        msg="O Que Você Busca?"
+        textButton="Buscar"
+        :search="true"
+      />
+    </transition>
     <IconWithText class="account" text="Minha Conta" icon="account" />
     <IconWithText class="heart" text="Minha Conta" icon="heart" />
-    <div class="display-flex align-items-center">
-      <img
-        class="search"
-        src="../assets/search-icon.svg"
-        alt="Ícone de Busca"
-      />
+    <transition name="fade">
+      <div v-if="iconSearchClicked">
+        <input
+          class="border-radius-medium bg-dark-white-2 border-none input-search-mobile"
+          type="text"
+          v-on-clickaway="away"
+        />
+      </div>
+    </transition>
+    <img
+      class="search"
+      src="../assets/search-icon.svg"
+      alt="Ícone de Busca"
+      v-on:click="iconSearchClicked = true"
+    />
+    <div v-if="!iconSearchClicked" class="display-flex align-items-center">
       <img class="bag" src="../assets/bag-icon.svg" alt="Ícone de Sacola" />
     </div>
+
     <button
       class="buttton-carrinho display-flex border-radius-tiny black-light-2 font-size-normal bg-white align-items-center"
     >
@@ -37,14 +56,29 @@
 <script>
 import InputWithButton from "./InputWithButton";
 import IconWithText from "./IconWithText";
+import { mixin as clickaway } from "vue-clickaway";
 export default {
+  mixins: [clickaway],
   name: "HeaderSite",
   props: {
     msg: String,
   },
+  data() {
+    return {
+      iconSearchClicked: false,
+    };
+  },
   components: {
     InputWithButton,
     IconWithText,
+  },
+  methods: {
+    away: function() {
+      if (document.querySelector(".input-search-mobile") !== null) {
+        console.log("clicked away");
+        this.iconSearchClicked = false;
+      }
+    },
   },
 };
 </script>
@@ -174,11 +208,29 @@ img {
     padding: 32px 15px;
   }
   @media (max-width: 768px) {
-    justify-content: space-between;
+    justify-content: right;
   }
+}
+
+.input-search-mobile {
+  padding: 5px;
+  margin-right: 5px;
+  width: 250px;
 }
 
 .bag {
   width: 24px;
+}
+
+.fade-enter-active {
+  transition: opacity 1s;
+}
+
+.fade-leave-active {
+  transition: opacity 0s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
