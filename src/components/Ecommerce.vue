@@ -340,14 +340,14 @@ a {
 
 .img-carousel {
   display: block;
-  @media (max-width: 768px) {
+  @media (max-width: 360px) {
     display: none;
   }
 }
 
 .img-carousel-mobile {
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 360px) {
     display: block;
   }
 }
@@ -362,6 +362,11 @@ a {
   left: 20rem;
   top: 19rem;
   font-size: 40px;
+  @media (max-width: 1290px) {
+    top: 15rem;
+    left: 10rem;
+    font-size: 30px;
+  }
   @media (max-width: 768px) {
     top: 10rem;
     left: 4rem;
@@ -377,6 +382,10 @@ a {
   top: 400px;
   font-size: 20px;
   width: 390px;
+  @media (max-width: 1290px) {
+    top: 20rem;
+    left: 10rem;
+  }
   @media (max-width: 768px) {
     top: 15rem;
     width: 210px;
@@ -394,6 +403,13 @@ a {
   background: #faa500;
   border-radius: 10px;
   font-size: 16px;
+  @media (max-width: 1290px) {
+    font-size: 14px;
+    width: 76px;
+    height: 28px;
+    left: 10rem;
+    top: 25rem;
+  }
   @media (max-width: 768px) {
     font-size: 14px;
     width: 76px;
