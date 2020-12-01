@@ -3,7 +3,13 @@
     class="header bg-white display-flex align-items-center justify-content-center"
   >
     <div class="display-flex align-items-center">
-      <img class="menu" src="../assets/menu-icon.svg" alt="Menu" />
+      <div class="div-menu">
+        <Slide class="menu" width="200">
+          <a href="#" v-for="(categorie, index) in categories" :key="index">
+            <span>{{ categorie }}</span>
+          </a>
+        </Slide>
+      </div>
       <img
         v-if="!iconSearchClicked"
         class="logo"
@@ -54,6 +60,7 @@
 </template>
 
 <script>
+import { Slide } from "vue-burger-menu";
 import InputWithButton from "./InputWithButton";
 import IconWithText from "./IconWithText";
 import { mixin as clickaway } from "vue-clickaway";
@@ -66,11 +73,21 @@ export default {
   data() {
     return {
       iconSearchClicked: false,
+      categories: [
+        "Minha Conta",
+        "Vestidos",
+        "Roupas",
+        "Sapatos",
+        "Lingerie",
+        "Acessórios",
+        "OUTLET",
+      ],
     };
   },
   components: {
     InputWithButton,
     IconWithText,
+    Slide,
   },
   methods: {
     away: function() {
@@ -194,10 +211,14 @@ img {
   }
   @media (max-width: 768px) {
     display: block;
-    width: 24px;
-    height: 24px;
-    margin-right: 19px;
+    position: absolute;
+    left: -25px;
+    top: 18px;
   }
+}
+
+.div-menu {
+  margin-right: 55px;
 }
 
 .header {
