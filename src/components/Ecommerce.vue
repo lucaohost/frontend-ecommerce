@@ -23,6 +23,15 @@
         ><img src="../assets/left.svg" alt="Flexa para esquerda"
       /></template>
     </agile>
+    <h1 class="white carousel-texts">Promoções de Outono</h1>
+    <p class="white carousel-sub-texts">
+      Confiras os melhores looks para combinar com você nesse Outono
+    </p>
+    <input
+      type="button"
+      class="button-carrousel white border-none font-weight-bold"
+      value="Conferir"
+    />
     <h2
       class="display-flex font-size-medium justify-content-center align-items-center font-weight-bold"
     >
@@ -345,6 +354,53 @@ a {
 
 .ProductShop {
   margin-right: 16px;
+}
+
+.carousel-texts {
+  z-index: 1;
+  position: absolute;
+  left: 20rem;
+  top: 19rem;
+  font-size: 40px;
+  @media (max-width: 768px) {
+    top: 10rem;
+    left: 4rem;
+    width: 170px;
+    font-size: 30px;
+  }
+}
+
+.carousel-sub-texts {
+  z-index: 1;
+  position: absolute;
+  left: 20rem;
+  top: 400px;
+  font-size: 20px;
+  width: 390px;
+  @media (max-width: 768px) {
+    top: 15rem;
+    width: 210px;
+    left: 4rem;
+    font-size: 14px;
+  }
+}
+
+.button-carrousel {
+  position: absolute;
+  width: 128px;
+  height: 48px;
+  left: 323px;
+  top: 500px;
+  background: #faa500;
+  border-radius: 10px;
+  font-size: 16px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+    width: 76px;
+    height: 28px;
+    left: 4rem;
+    top: 20rem;
+  }
 }
 </style>
 
