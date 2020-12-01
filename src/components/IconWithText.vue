@@ -15,12 +15,7 @@
       src="../assets/bag-icon.svg"
       alt="Ícone de Sacola"
     />
-    <img
-      v-else-if="icon == 'dress'"
-      src="../assets/dress-icon.svg"
-      alt="Ícone de Sacola"
-      class="dress"
-    />
+
     <span class=" font-size-normal" :class="textColor">{{ text }}</span>
   </div>
 </template>

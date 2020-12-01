@@ -3,9 +3,13 @@
     id="categories-bar"
     class="display-flex align-items-center justify-content-center"
   >
-    <IconWithText textColor="primary" text="Novidades" icon="dress" />
     <ul class="display-flex">
-      <li v-for="(categorie, index) in categories" :key="index">
+      <li
+        v-for="(categorie, index) in categories"
+        :class="'categorie ' + (index == 0 ? 'primary' : '')"
+        :key="index"
+        v-on:click="clickCategorie(categorie)"
+      >
         {{ categorie }}
       </li>
     </ul>
@@ -13,12 +17,12 @@
 </template>
 
 <script>
-import IconWithText from "./IconWithText";
 export default {
   name: "CategoriesBar",
   data() {
     return {
       categories: [
+        "Novidades",
         "Vestidos",
         "Roupas",
         "Sapatos",
@@ -28,8 +32,17 @@ export default {
       ],
     };
   },
-  components: {
-    IconWithText,
+  methods: {
+    clickCategorie(categorieClicked) {
+      let categories = document.querySelectorAll(".categorie");
+      for (let i = 0; i < categories.length; i++) {
+        if (categories[i].innerHTML.trim() == categorieClicked) {
+          categories[i].classList.add("primary");
+        } else {
+          categories[i].classList.remove("primary");
+        }
+      }
+    },
   },
 };
 </script>
