@@ -92,7 +92,6 @@ export default {
   methods: {
     away: function() {
       if (document.querySelector(".input-search-mobile") !== null) {
-        console.log("clicked away");
         this.iconSearchClicked = false;
       }
     },
