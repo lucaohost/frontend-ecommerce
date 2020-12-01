@@ -209,9 +209,27 @@ export default {
 };
 </script>
 
+<style lang="scss">
+.agile__dot button {
+  @media (max-width: 768px) {
+    height: 8px !important;
+    width: 8px !important;
+  }
+}
+
+.bm-burger-button {
+  height: 18px;
+  top: 41px;
+}
+
+.bm-burger-bars {
+  height: 1.88px;
+}
+</style>
+
 <style scoped lang="scss">
 .cards {
-  @media (max-width: 768px) {
+  @media (max-width: 1640px) {
     justify-content: normal;
     margin-right: 15px;
     margin-left: 15px;
@@ -243,9 +261,7 @@ a {
 }
 
 .scroll-x {
-  @media (max-width: 768px) {
-    overflow-x: scroll;
-  }
+  overflow-x: scroll;
 }
 
 .second-img-div {
@@ -331,7 +347,7 @@ a {
 
 #marcasParceiras {
   margin-bottom: 80px;
-  @media (max-width: 768px) {
+  @media (max-width: 1550px) {
     justify-content: normal;
     margin-right: 15px;
     margin-left: 15px;

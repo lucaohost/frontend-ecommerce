@@ -6,7 +6,7 @@
       <div class="div-menu">
         <Slide class="menu" width="200">
           <a href="#" v-for="(categorie, index) in categories" :key="index">
-            <span>{{ categorie }}</span>
+            <span class="font-size-medium">{{ categorie }}</span>
           </a>
         </Slide>
       </div>
