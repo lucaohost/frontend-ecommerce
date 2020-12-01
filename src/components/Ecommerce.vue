@@ -261,7 +261,9 @@ a {
 }
 
 .scroll-x {
-  overflow-x: scroll;
+  @media (max-width: 1665px) {
+    overflow-x: scroll;
+  }
 }
 
 .second-img-div {
