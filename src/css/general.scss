@@ -101,3 +101,19 @@ $fontSizes: (
 .border-none {
   border: none;
 }
+
+.agile__dot button {
+  @media (max-width: 768px) {
+    height: 8px !important;
+    width: 8px !important;
+  }
+}
+
+.bm-burger-button {
+  height: 18px;
+  top: 41px;
+}
+
+.bm-burger-bars {
+  height: 1.88px;
+}

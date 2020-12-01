@@ -80,8 +80,7 @@
       />
     </div>
     <div
-      class="second-img-div display-flex align-items-center 
-  justify-content-center"
+      class="second-img-div display-flex align-items-center justify-content-center"
     >
       <TitleWithText />
       <img
@@ -208,24 +207,6 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.agile__dot button {
-  @media (max-width: 768px) {
-    height: 8px !important;
-    width: 8px !important;
-  }
-}
-
-.bm-burger-button {
-  height: 18px;
-  top: 41px;
-}
-
-.bm-burger-bars {
-  height: 1.88px;
-}
-</style>
 
 <style scoped lang="scss">
 .cards {
